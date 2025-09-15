@@ -3,34 +3,40 @@
 @tailwind utilities;
 
 
-/* ... existing styles ... */
-/* === Custom Cursor Styles === */
-/* Do NOT hide the default cursor */
-
-/* Custom cursor dot */
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  background-color: #4a5568;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-}
-
-/* Custom cursor follower */
-.cursor-follower {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(59, 130, 246, 0.2);
-  border: 1px solid rgba(59, 130, 246, 0.5);
-  border-radius: 70%;
-  pointer-events: none;
-  z-index: 9998;
+@media (min-width: 1024px) and (hover: hover) {
+  /* === Custom Cursor Styles === */
+  /* Hide the default cursor on all elements */
+  * {
+    cursor: none !important;
+  }
+  
+  /* Custom cursor dot */
+  .cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #4a5568;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Custom cursor follower */
+  .cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(59, 130, 246, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+  }
 }
 /* === Global box sizing (prevent weird overflow calculations) === */
 *,
