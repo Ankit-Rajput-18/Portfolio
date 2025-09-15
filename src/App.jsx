@@ -17,7 +17,7 @@ export default function App() {
       <Header />
       <main className="max-w-6xl mx-auto px-4">
         <Hero />
-         <CursorFollower />
+        < CursorFollower />
          <ThemeToggle /> 
         <AboutMe />
         <Skills />

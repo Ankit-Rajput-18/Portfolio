@@ -1,38 +1,18 @@
-/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
-/* === Cursor Follower Styles === */
-/* Hide custom cursor on all devices by default */
 .cursor-dot, .cursor-follower {
   display: none;
 }
 
 /* Show custom cursor only on larger screens with hover capability */
 @media (min-width: 1024px) and (hover: hover) {
-  /* Hide the default cursor for a better experience with custom cursor */
-  html, body {
-    cursor: none !important;
-  }
-  
-  /* Custom cursor dot */
-  .cursor-dot {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 10px;
-    height: 10px;
-    background-color: #4a5568;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-  }
-  
-  /* Custom cursor follower */
+  /* ⚠️ Default cursor ko hide mat karo */
+  /* html, body { cursor: none !important; } <- is line ko hata do */
+
+
   .cursor-follower {
     display: block;
     position: fixed;
@@ -47,7 +27,6 @@
     z-index: 9998;
   }
 }
-
 /* === Global box sizing (prevent weird overflow calculations) === */
 *,
 *::before,
@@ -58,6 +37,8 @@
 /* Prevent unwanted horizontal scrolling caused by 100vw math */
 html, body {
   overflow-x: hidden;
+
+  /* overflow-y: hidden; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -93,7 +74,8 @@ html {
 .blob-size-3 { width: 480px; height: 480px; }
 
 /* === HERO: full-bleed helper (use this class on the <section id="hero">) ===
-   This avoids horizontal scroll while allowing canvas to reach viewport edges. */
+   This avoids horizontal scroll while allowing canvas to reach viewport edges.
+   Usage: <section id="hero" className="hero-full-bleed relative min-h-screen"> */
 .hero-full-bleed {
   position: relative;
   left: 50%;
@@ -106,7 +88,8 @@ html {
   box-sizing: border-box;
 }
 
-/* Hero / canvas layering & pointer behaviour */
+/* Hero / canvas layering & pointer behaviour
+   Canvas is absolutely positioned to fully cover parent (hero) */
 #hero canvas {
   position: absolute;
   inset: 0;
@@ -141,6 +124,7 @@ html {
 
 /* responsive tweaks */
 @media (max-width: 480px) {
+  /* Use normal Tailwind utilities in components; these are safety fallbacks */
   #hero .px-6 { padding-left: 16px; padding-right: 16px; }
   #hero .py-20 { padding-top: 56px; padding-bottom: 56px; }
   #hero h1 { font-size: 1.6rem; }

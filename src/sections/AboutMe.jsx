@@ -30,8 +30,8 @@ export default function AboutMe() {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <Reveal delay={0.2}>
-            {/* The size has been changed from w-64 h-64 to w-80 h-80 */}
-            <div className="relative w-80 h-80 mx-auto md:mx-0 rounded-full group">
+            {/* Image size is now responsive */}
+            <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 mx-auto md:mx-0 rounded-full group">
               <img
                 src={avatar}
                 alt="Ankit Rajput"
