@@ -81,7 +81,7 @@ export default function Navbar() {
           ))}
 
           {/* Theme Toggle */}
-          <ThemeToggle />
+        
         </div>
       )}
     </nav>
